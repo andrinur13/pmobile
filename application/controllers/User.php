@@ -195,4 +195,35 @@ class User extends REST_Controller
             ], REST_Controller::HTTP_BAD_REQUEST);
         }
     }
+
+    public function login_post()
+    {
+        $username = $this->post('username');
+        $password = $this->post('password');
+
+        $query = $this->User_model->getuserbyname($username);
+
+        if($query == null) {
+            return $this->response([
+                'status' => false,
+                'messages' => 'user not found!'
+            ]);
+        } else {
+            // cek password
+            
+            if(password_verify($password, $query['password'])) {
+                // benar
+                return $this->response([
+                    'status' => true,
+                    'messages' => 'success login',
+                    'data' => $query
+                ]);
+            } else {
+                return $this->response([
+                    'status' => false,
+                    'messages' => 'wrong password or username!'
+                ]);
+            }
+        }
+    }
 }
