@@ -1,0 +1,842 @@
+{
+	"info": {
+		"_postman_id": "e70db91c-53a5-4cab-8988-546059357377",
+		"name": "futsaloka_api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "GET_Request",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/Futsaloka/User/getuser",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Futsaloka",
+								"User",
+								"getuser"
+							]
+						},
+						"description": "Untuk meminta request (Get) semua user"
+					},
+					"response": []
+				},
+				{
+					"name": "GET_Request_username",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/Futsaloka/User/getusername?username=andrinur13",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Futsaloka",
+								"User",
+								"getusername"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "andrinur13"
+								}
+							]
+						},
+						"description": "Untuk meminta request (Get) username.\nharus ada parameters user yang dicari\n\nsebagai contoh username : andrinur13\nmaka sistem akan mencari username yang memiliki username andrinur13\n\njika username kosong maka akan memunculkan repsonses false."
+					},
+					"response": []
+				},
+				{
+					"name": "GET_Request_userbyid",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/Futsaloka/User/getuserbyid?id_user=3",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Futsaloka",
+								"User",
+								"getuserbyid"
+							],
+							"query": [
+								{
+									"key": "id_user",
+									"value": "3"
+								}
+							]
+						},
+						"description": "Pada request ini meminta data user berdasarkan id.\njadi yang dibutuhkan adalah parameters id\n\nsebagai contoh user dengan id = 3\n\njika id tidak ada, maka akan memunculkan reponses false"
+					},
+					"response": []
+				},
+				{
+					"name": "POST_Request_adduser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "id_user",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "yuri123",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Eko Yuri",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Bismillah",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "ekyuri@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "level",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "user_created",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost/Futsaloka/User/adduser",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Futsaloka",
+								"User",
+								"adduser"
+							]
+						},
+						"description": "Pada request ini adalah request POST yang digunakan untuk menambahkan data ke system\n\n\nPerlu parameters :\n\n-id_user\n\n-username\n\n-name\n\n-password\n\n-email\n\n-level\n\n-user_created\n\nuntuk id_user, user_created dan level, sudah otomatis\n\ncontoh saya menambahkan data 1 user sbb\n\njika ingin mencoba harap mengganti username yang ingin ditambahkan"
+					},
+					"response": []
+				},
+				{
+					"name": "PUT_Request_edituser",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "id",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "ekoyuri12345",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Eko Yuri",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Bismillah",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "ekoyuri@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "level",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost/Futsaloka/User/edituser",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Futsaloka",
+								"User",
+								"edituser"
+							]
+						},
+						"description": "Request ini untuk melakukan delete terhadap user dengan parameter id\n\ncontoh seperti berikut\n\nsebelum diedit username : ekoyuri123\nseelah diedit username : ekoyuri12345"
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE_Request_deleteuser",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "id",
+									"value": "5",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost/Futsaloka/User/deleteuser",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Futsaloka",
+								"User",
+								"deleteuser"
+							]
+						},
+						"description": "pada request ini untuk deleteuser berdasarkan id\n\ndibutuhkan id untu menghapus user"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Jadwal",
+			"item": [
+				{
+					"name": "GET_Jadwal_all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/Futsaloka/Jadwal/getjadwal",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Futsaloka",
+								"Jadwal",
+								"getjadwal"
+							]
+						},
+						"description": "Untuk mengambil semua jadwal futsal (bukan jadwal yang sudah dibooking)"
+					},
+					"response": []
+				},
+				{
+					"name": "GET_jadwalbyid",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/Futsaloka/Jadwal/getjadwalbyid?id=6",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Futsaloka",
+								"Jadwal",
+								"getjadwalbyid"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "6"
+								}
+							]
+						},
+						"description": "pada request ini untuk mengambil jadwal berdasarkan id jadwal\n\n\ndalam contoh id : 6"
+					},
+					"response": []
+				},
+				{
+					"name": "POST_addJadwal",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost/Futsaloka/Jadwal/addjadwal?id&jam=06:00:00&tarif=65000",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Futsaloka",
+								"Jadwal",
+								"addjadwal"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": null
+								},
+								{
+									"key": "jam",
+									"value": "06:00:00"
+								},
+								{
+									"key": "tarif",
+									"value": "65000"
+								}
+							]
+						},
+						"description": "request untuk menambahkan jadwal"
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE_deletejadwal",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "id",
+									"value": "64",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost/Futsaloka/Jadwal/deletejadwal",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Futsaloka",
+								"Jadwal",
+								"deletejadwal"
+							]
+						},
+						"description": "delete jadwal membutuhkan parameters id\n\n\nid disesuaikan dengan id pada jadwal"
+					},
+					"response": []
+				},
+				{
+					"name": "PUT_editjadwal",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "id",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "jam",
+									"value": "10:00:00",
+									"type": "text"
+								},
+								{
+									"key": "tarif",
+									"value": "60000",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost/Futsaloka/Jadwal/editjadwal",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Futsaloka",
+								"Jadwal",
+								"editjadwal"
+							]
+						},
+						"description": "request untuk mengedit jadwal yang sudah ada, misal untuk mengubah harga\n"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Pemesanan",
+			"item": [
+				{
+					"name": "GET_Pemesanan",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/Futsaloka/Pemesanan/getpemesanan",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Futsaloka",
+								"Pemesanan",
+								"getpemesanan"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_Pemesananbyid",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/Futsaloka/Pemesanan/getpemesananbyid?id_pemesanan=1",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Futsaloka",
+								"Pemesanan",
+								"getpemesananbyid"
+							],
+							"query": [
+								{
+									"key": "id_pemesanan",
+									"value": "1"
+								}
+							]
+						},
+						"description": "Untuk mendapatkan data pemesanan berdasarkan id\n\n\nmembutuhkan parameters id"
+					},
+					"response": []
+				},
+				{
+					"name": "GET_Pemesananbyname",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/Futsaloka/Pemesanan/getpemesananbyname/?username=andrinur13",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Futsaloka",
+								"Pemesanan",
+								"getpemesananbyname",
+								""
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "andrinur13"
+								}
+							]
+						},
+						"description": "untuk mendapatkan data pemesanan berdasarkan username yang memesan\n\n\nmembutuhkan parameters username"
+					},
+					"response": []
+				},
+				{
+					"name": "GET_Pemesananbydate",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/Futsaloka/Pemesanan/getpemesananbydate?date-input=2020-04-02",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Futsaloka",
+								"Pemesanan",
+								"getpemesananbydate"
+							],
+							"query": [
+								{
+									"key": "date-input",
+									"value": "2020-04-02"
+								}
+							]
+						},
+						"description": "mengambil data pemesanan berdasarkan inputan tanggal\n\n\nbutuh parameters date\n\nformat date : tahun-bulan-tanggal\ncontoh : 2020-04-02"
+					},
+					"response": []
+				},
+				{
+					"name": "POST_AddPemesanan",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "id_pemesanan",
+									"value": " ",
+									"description": "otomatis",
+									"type": "text"
+								},
+								{
+									"key": "id_jadwal",
+									"value": "8",
+									"type": "text"
+								},
+								{
+									"key": "id_user",
+									"value": "1",
+									"description": "id_user berdasarkan id user yang memesan",
+									"type": "text"
+								},
+								{
+									"key": "nama_pemesan",
+									"value": "Bayu Kuncoro",
+									"type": "text"
+								},
+								{
+									"key": "hp_pemesan",
+									"value": "084398498938",
+									"description": "format tahun-bulan-tanggal",
+									"type": "text"
+								},
+								{
+									"key": "tanggal_main",
+									"value": "2020-07-23",
+									"description": "otomatis",
+									"type": "text"
+								},
+								{
+									"key": "tanggal_pesan",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost/Futsaloka/Pemesanan/addpemesanan",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Futsaloka",
+								"Pemesanan",
+								"addpemesanan"
+							]
+						},
+						"description": "menambahkan data pemesanan ke dalam sistem"
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE_DeletePemesanan",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "id_pemesanan",
+									"value": "9999",
+									"description": "id_pemesanan tempatkan disini",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost/Futsaloka/Pemesanan/deletepemesanan",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Futsaloka",
+								"Pemesanan",
+								"deletepemesanan"
+							]
+						},
+						"description": "Untuk mendelete pemesanan berdasarkan id pemesanan"
+					},
+					"response": []
+				},
+				{
+					"name": "PUT_EditPemesanan",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "id_pemesanan",
+									"value": " 7",
+									"type": "text"
+								},
+								{
+									"key": "id_jadwal",
+									"value": " 5",
+									"type": "text"
+								},
+								{
+									"key": "id_user",
+									"value": " 1",
+									"type": "text"
+								},
+								{
+									"key": "nama_pemesan",
+									"value": " 'Bayu K'",
+									"type": "text"
+								},
+								{
+									"key": "hp_pemesan",
+									"value": " '083838383'",
+									"type": "text"
+								},
+								{
+									"key": "tanggal_main",
+									"value": " '2020-08-24'",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost/Futsaloka/Pemesanan/editpemesanan",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Futsaloka",
+								"Pemesanan",
+								"editpemesanan"
+							]
+						},
+						"description": "untuk mengedit data pemesanan"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Transaksi",
+			"item": [
+				{
+					"name": "GET_alltransaksi",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/Futsaloka/Transaksi/gettransaksi",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Futsaloka",
+								"Transaksi",
+								"gettransaksi"
+							]
+						},
+						"description": "request untuk mendapatkan data semua transasi"
+					},
+					"response": []
+				},
+				{
+					"name": "GET_Transaksibyid",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/Futsaloka/Transaksi/gettransaksibyid?id_transaksi=2",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Futsaloka",
+								"Transaksi",
+								"gettransaksibyid"
+							],
+							"query": [
+								{
+									"key": "id_transaksi",
+									"value": "2"
+								}
+							]
+						},
+						"description": "mengambil data transaksi berdasarkan id\n\n\nmembutuhkan parameters id"
+					},
+					"response": []
+				},
+				{
+					"name": "POST_AddTransaksi",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "id_transaksi",
+									"value": "",
+									"description": "otomatis",
+									"type": "text"
+								},
+								{
+									"key": "id_pemesanan",
+									"value": "2",
+									"description": "berdasarkan id_pemesanan",
+									"type": "text"
+								},
+								{
+									"key": "watu_konfirmasi",
+									"value": "",
+									"description": "otomatis",
+									"type": "text"
+								},
+								{
+									"key": "konfirmasi",
+									"value": "",
+									"description": "otomatis",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost/Futsaloka/Transaksi/addtransaksi",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Futsaloka",
+								"Transaksi",
+								"addtransaksi"
+							]
+						},
+						"description": "request untuk menambahkan data transaksi"
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE_DeleteTransaksi",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "id_transaksi",
+									"value": "99",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost/Futsaloka/Transaksi/deletetransaksi",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Futsaloka",
+								"Transaksi",
+								"deletetransaksi"
+							]
+						},
+						"description": "request untuk menghapus transaksi berdasarkan id\n\n\nmembutuhkan parameters id"
+					},
+					"response": []
+				},
+				{
+					"name": "GET_Pendapatan",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/Futsaloka/Transaksi/getpendapatan",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Futsaloka",
+								"Transaksi",
+								"getpendapatan"
+							]
+						},
+						"description": "request untuk mendapatkan pendapatan"
+					},
+					"response": []
+				},
+				{
+					"name": "PUT_EditTransaksi",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "id_transaksi",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "id_pemesanan",
+									"value": "1",
+									"description": "sesuaikan dengan id pemesanan",
+									"type": "text"
+								},
+								{
+									"key": "waktu_konfirmasi",
+									"value": "",
+									"description": "otomatis",
+									"type": "text"
+								},
+								{
+									"key": "konfirmasi",
+									"value": "",
+									"description": "otomatis",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost/Futsaloka/Transaksi/edittransaksi",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Futsaloka",
+								"Transaksi",
+								"edittransaksi"
+							]
+						},
+						"description": "request untuk mengedit transaksi"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
